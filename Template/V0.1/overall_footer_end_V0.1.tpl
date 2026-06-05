@@ -1,0 +1,115 @@
+<!-- BEGIN html_validation -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div>
+	<div>
+		<div>
+			<div>
+				<div>
+					<div>
+						<div>
+							<ul>
+								<li>
+<!-- END html_validation -->
+								</li>
+							</ul>
+
+						</div>
+					</div>
+                                  
+				</div>
+				{PROTECT_FOOTER}
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+	fa_endpage();
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+	$(window).scroll(function() {
+		var header_top = $('#headerbar-top');
+
+		if (header_top.hasClass('w-toolbar')) {
+			if ($(window).scrollTop() >= 42) {
+				header_top.addClass('is-sticky');
+			} else {
+				header_top.removeClass('is-sticky');
+			}
+		} else {
+			if ($(window).scrollTop() >= 1) {
+				header_top.addClass('is-sticky');
+			} else {
+				header_top.removeClass('is-sticky');
+			}
+		}
+	});
+});
+//]]>
+</script>
+
+<!--------------------------------------->
+<!-- BARRE LATERALE GAUCHE POUR PLUGIN -->  
+
+<div class="sidebar">
+  
+  	<div class="sidebar_bottom">
+          
+            <!-- Lien retour en haut -->
+            <a href="#top"><i class="ion-chevron-up"></i></a>
+       
+        
+            <!-- Lien retour en bas -->
+            <a href="#bottom"><i class="ion-chevron-down"></i></a>
+        </div>
+</div>
+  
+
+
+
+ <!-- EDISON plugin -->
+<script>
+(function () {
+    const html = document.documentElement;
+    const themeControls = document.querySelector("[data-theme-controls]");
+    const toggle = themeControls.querySelector(".color-scheme-toggle");
+    
+    const setToggleLabel = function () {
+     let mode = html.dataset.colorScheme;
+        toggle.setAttribute(
+            "title",
+            "Activer le mode " + (mode === "dark" ? "clair" : "sombre")
+        );
+    };
+
+    const setColorScheme = function (value) {
+        html.dataset.colorScheme = value;
+        localStorage.setItem("color-scheme", value);
+        setToggleLabel();
+    };
+
+    const init = function () {
+        setToggleLabel();
+    };
+
+    toggle.addEventListener("click", function () {
+        const scheme = html.dataset.colorScheme === "dark" ? "light" : "dark";
+        setColorScheme(scheme);
+    });
+
+    init();
+
+})();
+</script>
+  
+
+  
+</body>
+</html>
+            
